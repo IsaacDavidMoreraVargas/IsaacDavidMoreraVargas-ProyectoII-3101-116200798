@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout_interno";
+}
+    <div class="contenedor-tabla border-padre">
+        <div class="contenedor-cabezas">
+            <div class="cabeza">Codigo Libro</div>
+            <div class="cabeza">Precio Artículo</div>
+            <div class="cabeza">Código Cliente</div>
+            <div class="cabeza">Fecha Ingreso</div>
+            <div class="cabeza">Descripcion Artículo</div>
+        </div>
+
+    @{
+        if (ViewBag.ListaProductos != null)
+        {
+            int bandera = 0;
+            foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_stock producto in ViewBag.ListaProductos)
+            {
+                    if ((bandera % 2) == 0)
+                    {
+                        <div class="contenedor-fila-datos">
+                            <div class="dato-dato">@producto.Codigo_Libro </div>
+                            <div class="dato-dato">@producto.Precio_Articulo</div>
+                            <div class="dato-dato">@producto.Codigo_Cliente</div>
+                            <div class="dato-dato">@producto.Fecha_Ingreso</div>
+                            <div class="dato-dato">@producto.Descripcion_Articulo</div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="contenedor-fila-datos">
+                            <div class="dato-dato color">@producto.Codigo_Libro </div>
+                            <div class="dato-dato color">@producto.Precio_Articulo</div>
+                            <div class="dato-dato color">@producto.Codigo_Cliente</div>
+                            <div class="dato-dato color">@producto.Fecha_Ingreso</div>
+                            <div class="dato-dato color">@producto.Descripcion_Articulo</div>
+                        </div>
+                    }
+            }
+        }
+    }
+    </div>

@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout_interno";
+}
+@model WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro;
+
+<div class="contenedor-columna">
+    <form method="post" enctype="multipart/form-data" asp-controller="NuevaEnfermedad" asp-action="Registro_Medio" asp-route-id="3" asp-route-codigounico="@TempData["Codigo_Unico"]">
+
+        <div class="contenedor-fila border-padre">
+            <div class="contenedor-titulo color-titulo-padre">Datos Registro Libro</div>
+            <div class="contenedor-datos">
+                <label class="titulo-valor color-padre">Codigo Libro</label>
+                <input disabled runat="server" asp-for="Codigo_Libro" class="input-valor border-hijo" id="" value="" type="number" onkeyup="" required />
+            </div>
+            <div class="contenedor-datos">
+                <label class="titulo-valor color-padre">Nombre Libro</label>
+                <input runat="server" asp-for="Nombre_Libro" class="input-valor border-hijo" id="" value="" type="text" onkeyup="evaluar_vacios()" maxlength="30" required />
+            </div>
+            <div class="contenedor-datos">
+                <label class="titulo-valor color-padre">Nombre Empresa</label>
+                <input runat="server" asp-for="Nombre_Empresa" class="input-valor border-hijo" id="" value="" type="text" onkeyup="evaluar_vacios()" maxlength="30" required />
+            </div>        
+        </div>
+
+        <input class="button-to-submit" type="submit" value="Guardar" />
+    </form>
+</div>

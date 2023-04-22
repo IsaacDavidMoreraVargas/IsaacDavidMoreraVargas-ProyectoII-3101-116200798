@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApplication_Proyecto_II__Morera_Vargas_Isaac
+build_property.RootNamespace = WebApplication_Proyecto_II__Morera_Vargas_Isaac
+build_property.ProjectDir = C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Administrador/AgregarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxBZ3JlZ2FyQ2xpZW50ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Administrador/AgregarLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxBZ3JlZ2FyTGlicm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Administrador/ConsultaStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxDb25zdWx0YVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-sysiaz9bra
+
+[C:/Users/Isaac/Mi unidad/SYNC/UNED/03101 - PROGRAMACION AVANZADA EN WEB/Instrumentos/proyectoii/WebApplication-Proyecto II/Views/Shared/_Layout_interno.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfaW50ZXJuby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-dta7qxt1kv

@@ -1,0 +1,41 @@
+﻿.contenedor-tabla {
+    margin-left: 2%;
+    margin-right: 0%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: 97%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.contenedor-cabezas, .contenedor-fila-datos
+{
+    height: 2%;
+}
+.contenedor-cabezas {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 98%;
+}
+.contenedor-fila-datos {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 98%;
+}
+
+.cabeza, .dato-dato {
+    border-left: 1px solid white;
+    width: 19.8%;
+    background-color: #749CE0;
+    text-align: center;
+    color: black;
+    float: left;
+}
+
+.color {
+    background-color: #A7ADE1;
+}
+
+
