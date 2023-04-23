@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sistema registro Libros</title>
     <link rel="stylesheet" type="text/css" href="~/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ventana_alerta.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/una_columna.css" />
     <link rel="stylesheet" type="text/css" href="~/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="~/css/tabla.css" />
     <script type="text/javascript" src="~/js/general.js"></script>
+    <script type="text/javascript" src="~/js/ventana_alerta.js"></script>
     @RenderSection("css", false)
 </head>
-<body>
+<body onload="primera_vez()">
     <header>
         <div class="body-layout color-menu">
         </div>

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebApplication-Proyecto II- Morera Vargas Isaac.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\dos_columnas.css",
+      "PackagePath": "staticwebassets\\css\\dos_columnas.css"
+    },
+    {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\general.css",
       "PackagePath": "staticwebassets\\css\\general.css"
     },
@@ -17,12 +21,28 @@
       "PackagePath": "staticwebassets\\css\\tabla.css"
     },
     {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\una_columna.css",
+      "PackagePath": "staticwebassets\\css\\una_columna.css"
+    },
+    {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\ventana_alerta.css",
+      "PackagePath": "staticwebassets\\css\\ventana_alerta.css"
+    },
+    {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\general.js",
       "PackagePath": "staticwebassets\\js\\general.js"
+    },
+    {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\obtener_online.js",
+      "PackagePath": "staticwebassets\\js\\obtener_online.js"
+    },
+    {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\ventana_alerta.js",
+      "PackagePath": "staticwebassets\\js\\ventana_alerta.js"
     },
     {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\lib\\bootstrap\\LICENSE",

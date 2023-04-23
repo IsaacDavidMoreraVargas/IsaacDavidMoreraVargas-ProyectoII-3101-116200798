@@ -1,4 +1,10 @@
-﻿function primera_vez() {
+﻿var color_error = "1px solid #F5524C";
+var color_correcto = "1px solid black";
+
+var color_boton_error = "gray";
+var color_boton_correcto = "#8fc2ec";
+
+function primera_vez() {
     evaluar_vacios()
 }
 

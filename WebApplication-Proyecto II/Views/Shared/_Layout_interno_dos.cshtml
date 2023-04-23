@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema registro Libros</title>
+    <link rel="stylesheet" type="text/css" href="~/css/general.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/dos_columnas.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/ventana_alerta.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/tabla.css" />
+    <script type="text/javascript" src="~/js/ventana_alerta.js"></script>
+    <script type="text/javascript" src="~/js/general.js"></script>
+    @RenderSection("css", false)
+</head>
+<body onload="primera_vez()">
+    <header>
+        <div class="body-layout color-menu">
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+   
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

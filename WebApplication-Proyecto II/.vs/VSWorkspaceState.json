@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\Controllers",
-    "\\Models",
     "\\Views",
-    "\\Views\\Administrador"
+    "\\Views\\Administrador",
+    "\\Views\\Shared",
+    "\\wwwroot",
+    "\\wwwroot\\css"
   ],
-  "SelectedNode": "\\Models\\asociar_libro.cs",
+  "SelectedNode": "\\Controllers\\RegistroLibro_Context.cs",
   "PreviewInSolutionExplorer": false
 }

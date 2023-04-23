@@ -24,5 +24,7 @@ app.MapControllerRoute(
     name: "default",
     //pattern: "{controller=Home}/{action=Index}/{id?}");
     //pattern: "{controller=Administrador}/{action=ConsultaStock}/{id?}");
-    pattern: "{controller=Administrador}/{action=AgregarLibro}/{id?}");
+    //pattern: "{controller=Administrador}/{action=AgregarLibro}/{id?}");
+    pattern: "{controller=Administrador}/{action=AgregarCliente}/{id?}");
+//pattern: "{controller=Administrador}/{action=AgregarIngreso}/{id?}");
 app.Run();

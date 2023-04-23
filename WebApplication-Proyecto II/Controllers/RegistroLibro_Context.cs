@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApplication_Proyecto_I.Controllers.Clinica;
 
 namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
 {
@@ -15,7 +14,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-RVLLMUB;Database=ProyectoI;Trusted_Connection=True;Encrypt=false;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-RVLLMUB;Database=ProyectoII;Trusted_Connection=True;Encrypt=false;");
             }
         }
 
@@ -23,7 +22,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         {
             modelBuilder.Entity<WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro>(entity =>
             {
-                entity.ToTable("datosClinica");
+                entity.ToTable("libro");
 
                 entity.Property(e => e.Nombre_Empresa)
                     .HasMaxLength(30)

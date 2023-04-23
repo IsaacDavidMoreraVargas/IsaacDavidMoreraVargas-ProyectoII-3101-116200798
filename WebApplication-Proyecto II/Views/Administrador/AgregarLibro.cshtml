@@ -1,19 +1,24 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@using Microsoft.JSInterop
+
 @{
     Layout = "_Layout_interno";
 }
 @model WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro;
+@{
 
+    @Html.Raw(@TempData["Alert-Alert"]);
+}
 <div class="contenedor-columna">
-    <form method="post" enctype="multipart/form-data" asp-controller="NuevaEnfermedad" asp-action="Registro_Medio" asp-route-id="3" asp-route-codigounico="@TempData["Codigo_Unico"]">
-
+    <form method="post" enctype="multipart/form-data" asp-controller="Administrador" asp-action="RegistrarLibro" asp-route-orden="@TempData["Codigo_Orden"]">
         <div class="contenedor-fila border-padre">
             <div class="contenedor-titulo color-titulo-padre">Datos Registro Libro</div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Codigo Libro</label>
-                <input disabled runat="server" asp-for="Codigo_Libro" class="input-valor border-hijo" id="" value="" type="number" onkeyup="" required />
+                <input readonly runat="server" asp-for="Codigo_Libro" class="input-valor border-hijo" id="" value="@TempData["Codigo_Libro"]" type="number" onkeyup="" required />
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Nombre Libro</label>
@@ -26,5 +31,6 @@
         </div>
 
         <input class="button-to-submit" type="submit" value="Guardar" />
+        
     </form>
 </div>

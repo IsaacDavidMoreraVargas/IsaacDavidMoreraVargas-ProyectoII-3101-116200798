@@ -7,12 +7,12 @@
 @model WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_cliente;
 
 <div class="contenedor-columna">
-    <form method="post" enctype="multipart/form-data" asp-controller="NuevaEnfermedad" asp-action="Registro_Medio" asp-route-id="3" asp-route-codigounico="@TempData["Codigo_Unico"]">
+    <form method="post" enctype="multipart/form-data" asp-controller="Administrador" asp-action="RegistrarCliente">
         <div class="contenedor-fila border-padre">
             <div class="contenedor-titulo color-titulo-padre">Datos Registro Cliente</div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Codigo Cliente</label>
-                <input disabled runat="server" asp-for="Codigo_Cliente" class="input-valor border-hijo" id="" value="" type="number" onkeyup="" required />
+                <input readonly runat="server" asp-for="Codigo_Cliente" class="input-valor border-hijo" id="" value="@TempData["Codigo_Cliente"]" type="number" onkeyup="" required />
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Numero Identificacion</label>
