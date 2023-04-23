@@ -313,3 +313,14 @@ form {
     .reporte-contenido::-webkit-scrollbar {
         display: none;
     }
+
+.regresar {
+    margin-top: 1%;
+    margin-left: 5%;
+}
+
+    .regresar:hover {
+        margin-top: 1%;
+        margin-left: 5%;
+        color: #7EC0FF;
+    }

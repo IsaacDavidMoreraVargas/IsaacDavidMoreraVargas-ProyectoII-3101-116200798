@@ -11,7 +11,8 @@
             request.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     if (this.responseText != "null") {
-                        let convertido = this.responseText;
+                        let convertido = JSON.parse(this.responseText);
+                        document.getElementsByTagName("input")[2].value = convertido.Codigo_Libro;
                         evaluar_vacios()
                     }
                 }
@@ -29,7 +30,8 @@
             request.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     if (this.responseText != "null") {
-                        let convertido = this.responseText;
+                        let convertido = JSON.parse(this.responseText);
+                        document.getElementsByTagName("input")[5].value = convertido.Codigo_Cliente;
                         evaluar_vacios()
                     }
                 }

@@ -17,6 +17,15 @@ Create table cliente(
 		PRIMARY KEY (Codigo_Cliente)
 );
 
+Create table stock(
+		 Llave_Libro int NOT NULL IDENTITY,
+         Codigo_Libro int NOT NULL,
+		 Descripcion_Articulo varchar(30) NOT NULL,
+		 Precio_Articulo float NOT NULL,
+		 Codigo_Cliente int NOT NULL,
+		 Fecha_Ingreso  varchar(20) NOT NULL,
+		 PRIMARY KEY (Llave_Libro)
+);
 
 Create table retirados(
          Llave_retiro int NOT NULL,
@@ -29,13 +38,3 @@ Create table retirados(
 		 PRIMARY KEY (Llave_retiro)
 );
 
-Create table stock(
-		 Llave_Libro int NOT NULL,
-         Codigo_Libro int NOT NULL,
-		 Descripcion_Articulo varchar(30) NOT NULL,
-		 Precio_Articulo int NOT NULL,
-		 Codigo_Cliente int NOT NULL,
-		 Fecha_Ingreso  varchar(20) NOT NULL,
-		 Estado bit not null,
-		 PRIMARY KEY (Codigo_Libro)
-);

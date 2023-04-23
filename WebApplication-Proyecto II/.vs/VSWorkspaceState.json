@@ -6,8 +6,9 @@
     "\\Views\\Administrador",
     "\\Views\\Shared",
     "\\wwwroot",
-    "\\wwwroot\\css"
+    "\\wwwroot\\css",
+    "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\Controllers\\RegistroLibro_Context.cs",
+  "SelectedNode": "\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

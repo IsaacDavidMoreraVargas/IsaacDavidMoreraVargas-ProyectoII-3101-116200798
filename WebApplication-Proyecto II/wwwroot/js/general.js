@@ -10,22 +10,6 @@ function primera_vez() {
 
 function actualizar_fecha(numero, input_meta, input_origen, validar) {
     document.getElementsByClassName(input_meta)[numero].value = document.getElementsByClassName(input_origen)[numero].value;
-    /*
-    if (validar == true) {
-        let fecha_meta = document.getElementsByClassName(input_meta)[0];
-        let fecha_origen = document.getElementsByClassName(input_meta)[1];
-        try {
-            if (Date.parse(fecha_meta.value) < Date.parse(fecha_origen.value)) {
-                document.getElementsByClassName(input_meta)[numero].value = document.getElementsByClassName(input_origen)[numero].value;
-            } else {
-                fecha_origen.value = "";
-                alert("Fecha caducidad no puede ser menor o igual a Fecha fabricacion");
-            }
-        } catch { }
-    } else {
-        //no asignado
-    }
-    */
     evaluar_vacios()
 }
 
@@ -62,4 +46,28 @@ function evaluar_vacios() {
         boton.style.backgroundColor = color_elegido;
     }
 
+}
+
+function evaluar_float(elemento)
+{
+    let valor = elemento.value;
+    valor = valor.toString();
+    if (valor.includes(",")) {
+        valor = valor.replace(",", ".");
+    }
+    if (valor.includes("."))
+    {
+        let dividido = valor.split('.');
+        if (dividido[1].length > 1)
+        {
+            let unir = dividido[0] + ".";
+            let dump = dividido[1];
+            for (let flag = 0; flag < 2; flag++)
+            {
+                unir += dump[flag];
+            }
+            elemento.value = unir;
+        }
+    }
+    //console.log("here");
 }

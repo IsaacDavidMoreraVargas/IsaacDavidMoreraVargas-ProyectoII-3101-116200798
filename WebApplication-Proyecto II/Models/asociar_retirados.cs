@@ -15,8 +15,6 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models
 
         public int Codigo_Cliente { get; set; }
 
-        public string Nombre_Empresa { get; set; }
-
         public string Fecha_Retiro { get; set; }
     }
 }

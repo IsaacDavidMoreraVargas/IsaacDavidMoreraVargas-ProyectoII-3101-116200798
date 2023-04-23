@@ -10,37 +10,45 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         public WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro Registro_Libro { get; set; }
         [BindProperty]
         public WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_cliente Registro_Cliente { get; set; }
+        [BindProperty]
+        public WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_stock Registro_Ingreso { get; set; }
+
         RegistroLibro_Context context_libro = new RegistroLibro_Context();
         RegistroCliente_Context context_cliente = new RegistroCliente_Context();
+        RegistroIngreso_Context context_ingreso = new RegistroIngreso_Context();
+
         public ActionResult Index()
         {
             return View();
         }
-
         public IActionResult AgregarLibro()
         {
-            var resultados = context_libro.Registros_Libro.ToList();
-            int numero = 0;            
-            if (resultados != null)
+            try
             {
-                numero = 10+resultados.Count;
-            }
-            else
-            {
-                numero = 10;
-            }
-            if (numero > 99)
-            {
-               
-            }
-            else
-            {
-                TempData["Codigo_Libro"] = numero;
-            }
-            
+                var resultados = context_libro.Registros_Libro.ToList();
+                int numero = 0;
+                if (resultados != null)
+                {
+                    numero = 10 + resultados.Count;
+                }
+                else
+                {
+                    numero = 10;
+                }
+                if (numero > 99)
+                {
+
+                }
+                else
+                {
+                    TempData["Codigo_Libro"] = numero;
+                }
+            }catch (Exception e) { Console.WriteLine("Error Obtener datos de libro: " + e); }
+
+
             return View();
         }
-        public IActionResult RegistrarLibro(int orden)
+        public IActionResult RegistrarLibro()
         {
             try
             {
@@ -48,12 +56,6 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 {
                     context_libro.Registros_Libro.Add(Registro_Libro);
                     context_libro.SaveChanges();
-                    string ventana_alerta = "<div class=*bloquear-alerta*><div class=*ventana-alertas*>" +
-                                                "<div class=*mensaje-ventana-alertas*>¿Quiere agregar mas registros?</div>" +
-                                                "<div class=*boton-ventana-alertas espacio* onclick=*cerrarAlerta()*>Si</div><div class=*boton-ventana-alertas* onclick=*aInicioIndex()*>No</div>" +
-                                            "</div></div>";
-                    ventana_alerta = ventana_alerta.Replace("*", "'");
-                    TempData["Alert-Alert"] = ventana_alerta;
                 }
                 
             }
@@ -61,96 +63,41 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
 
             return RedirectToAction("AgregarLibro", "Administrador");
         }
-        public string ConsultaInmediataCodigoLibro(int id)
-        {
-            string string_retorno = "null";
-            /*
-            var resultados = context_profesional.Registros_Profesional.ToList();
-
-            if (resultados != null)
-            {
-                bool encontrado = false;
-
-                foreach (Models.Profesional.asociar_profesional valor in resultados)
-                {
-                    if (valor.Identificacion_Profesional == id && valor.Codigo_Profesional == codigo)
-                    {
-                        encontrado = true;
-                        esqueleto = valor;
-                        break;
-                    }
-                }
-
-                if (encontrado == true)
-                {
-                    
-                }
-            }
-            */
-            return (string_retorno);
-        }
-
-        public string ConsultaInmediataCodigoCliente(int id)
-        {
-            string string_retorno = "null";
-            /*
-            var resultados = context_profesional.Registros_Profesional.ToList();
-
-            if (resultados != null)
-            {
-                bool encontrado = false;
-
-                foreach (Models.Profesional.asociar_profesional valor in resultados)
-                {
-                    if (valor.Identificacion_Profesional == id && valor.Codigo_Profesional == codigo)
-                    {
-                        encontrado = true;
-                        esqueleto = valor;
-                        break;
-                    }
-                }
-
-                if (encontrado == true)
-                {
-                    
-                }
-            }
-            */
-            return (string_retorno);
-        }
         public IActionResult AgregarCliente()
         {
-            var resultados = context_cliente.Registros_Cliente.ToList();
-            int numero = 0;
-            if (resultados != null)
+            try
             {
-                numero = 10000 + resultados.Count;
-            }
-            else
-            {
-                numero = 10000;
-            }
-            if (numero > 99999)
-            {
+                var resultados = context_cliente.Registros_Cliente.ToList();
+                int numero = 0;
+                if (resultados != null)
+                {
+                    numero = 10000 + resultados.Count;
+                }
+                else
+                {
+                    numero = 10000;
+                }
+                if (numero > 99999)
+                {
 
-            }
-            else
-            {
-                TempData["Codigo_Cliente"] = numero;
-            }
-
+                }
+                else
+                {
+                    TempData["Codigo_Cliente"] = numero;
+                }
+            }catch (Exception e) { Console.WriteLine("Error Obtener datos de cliente: " + e); }
             return View();
         }
         public IActionResult RegistrarCliente()
         {
-            if (Registro_Libro.Codigo_Libro < 100000)
+            if (Registro_Cliente.Codigo_Cliente < 100000)
             {
                 try
                 {
                     context_cliente.Registros_Cliente.Add(Registro_Cliente);
                     context_cliente.SaveChanges();
                 }
-                catch (Exception e) { Console.WriteLine("RegistrarLibro Error: " + e); }
+                catch (Exception e) { Console.WriteLine("RegistrarCliente Error: " + e); }
             }
             return RedirectToAction("AgregarCliente", "Administrador");
         }
@@ -158,11 +105,93 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         {
             return View();
         }
-        public int GeneradorRandom(int min, int max)
+        public IActionResult AgregarIngreso()
         {
-            Random rnd = new Random();
-            int numero=rnd.Next(min, max + 1);
-            return numero;
+            return View();
+        }
+        public IActionResult RegistrarIngreso()
+        {
+            try 
+            {
+                //Console.WriteLine("->"+ Registro_Ingreso.Precio_Articulo);
+                Registro_Ingreso.Precio_Articulo= (float)Math.Round(Registro_Ingreso.Precio_Articulo * 100f) / 100f;
+                context_ingreso.Registros_Ingreso.Add(Registro_Ingreso);
+                context_ingreso.SaveChanges();
+
+                string ventana_alerta = "<div class=*bloquear-alerta*><div class=*ventana-alertas*>" +
+                                            "<div class=*mensaje-ventana-alertas*>¿Quiere agregar mas libros a custodia?</div>" +
+                                            "<div class=*boton-ventana-alertas espacio* onclick=*cerrarAlerta()*>Si</div><div class=*boton-ventana-alertas* onclick=*aInicioIndex()*>No</div>" +
+                                        "</div></div>";
+                ventana_alerta = ventana_alerta.Replace("*", "'");
+                TempData["Alert-Alert"] = ventana_alerta;
+            }catch (Exception e) { Console.WriteLine("Error Registo Ingreso: "+e); }
+            return RedirectToAction("AgregarIngreso", "Administrador");
+        }
+
+        //Funciones Consulta online
+        public string ConsultaInmediataCodigoLibro(int id)
+        {
+            string string_retorno = "null";
+            Models.asociar_libro esqueleto = new Models.asociar_libro();
+
+            var resultados = context_libro.Registros_Libro.ToList();
+
+            if (resultados != null)
+            {
+                bool encontrado = false;
+
+                foreach (Models.asociar_libro valor in resultados)
+                {
+                    if (valor.Codigo_Libro == id)
+                    {
+                        encontrado = true;
+                        esqueleto = valor;
+                        break;
+                    }
+                }
+
+                if (encontrado == true)
+                {
+                    string_retorno =
+                        "{" +
+                        "*Codigo_Libro*:*" + esqueleto.Codigo_Libro + "*" +
+                        "}";
+                    string_retorno = string_retorno.Replace('*', '"');
+                }
+            }
+
+            return (string_retorno);
+        }
+        public string ConsultaInmediataCodigoCliente(int id)
+        {
+            string string_retorno = "null";
+            Models.asociar_cliente esqueleto = new Models.asociar_cliente();
+
+            var resultados = context_cliente.Registros_Cliente.ToList();
+
+            if (resultados != null)
+            {
+                bool encontrado = false;
+
+                foreach (Models.asociar_cliente valor in resultados)
+                {
+                    if (valor.Codigo_Cliente == id)
+                    {
+                        encontrado = true;
+                        esqueleto = valor;
+                        break;
+                    }
+                }
+
+                if (encontrado == true)
+                {
+                    string_retorno = "{" +
+                        "*Codigo_Cliente*:*" + esqueleto.Codigo_Cliente + "*" +
+                        "}";
+                    string_retorno = string_retorno.Replace('*', '"');
+                }
+            }
+            return (string_retorno);
         }
     }
 }
