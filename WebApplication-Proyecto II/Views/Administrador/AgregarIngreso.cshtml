@@ -43,8 +43,8 @@
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Fecha Ingreso</label>
-                <input runat="server" asp-for="Fecha_Ingreso" class="box-input-valor border-hijo" readonly id="" value="" type="text" onchange="evaluar_vacios()" maxlength="30" required />
-                <input class="input-date-valor" id="" value="" type="date" onchange="actualizar_fecha(0,'box-input-valor','input-date-valor',false)" required />
+                <input runat="server" asp-for="Fecha_Ingreso" class="box-input-valor border-hijo" readonly id="" value="@TempData["Fecha_Actual"]" type="text" onchange="evaluar_vacios()" maxlength="30" required />
+                <input disabled class="input-date-valor" id="" value="@TempData["Fecha_Actual"]" type="date" onchange="actualizar_fecha(0,'box-input-valor','input-date-valor',false)" required />
             </div>
         </div>
 

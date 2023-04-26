@@ -38,4 +38,117 @@
     background-color: #A7ADE1;
 }
 
+.tabla {
+    margin-top: 0%;
+    margin-left: 1%;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 98%;
+    height: 70%;
+    float: left;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
+.leyenda-tabla {
+    margin-top: 2%;
+    margin-left: 1%;
+    width: 97%;
+    background-color: #F9AB67;
+    border: 1px solid black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.fila-tabla-cabeza, .fila-tabla {
+    height: 10%;
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 96%;
+    float: none;
+}
+.cuerpo-filas {
+    margin-top: 0%;
+    margin-left: 1%;
+    width: 99%;
+    height: 98%;
+    float: none;
+}
+.fila-tabla {
+    margin-top: 0.5%;
+    width: 97%;
+    height: 15%;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #e3e2e1;
+}
+
+.cabeza-tabla, .valor-tabla {
+    margin-left: 0.5%;
+    width: 16%;
+    text-align: center;
+    background-color: #85C2F4;
+    float: left;
+}
+button
+{
+    border: none;
+}
+.valor-tabla {
+    background-color: #AFDFF4;
+}
+.rechazo-tabla {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 98%;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+.resaltar:hover {
+    border: 1px solid black;
+    color: white;
+}
+
+.si-valor {
+    background-color: #93e178;
+}
+
+.no-valor {
+    background-color: #EFEEE5;
+}
+
+.fila-fila {
+    margin-top: 1%;
+    margin-left: 0%;
+    width: 99%;
+    height: 20%;
+}
+.contenedor-datos-tabla {
+    margin-top: 1%;
+    margin-left: 10%;
+    width: 99%;
+    height: 10%;
+}
+.titulo-valor-tabla, .box-input-valor-tabla, .input-date-valor-tabla {
+    border: 1px solid black;
+    float: left;
+}
+
+.titulo-valor-tabla {
+    width: 15%;
+    background-color: black;
+    color: white;
+}
+
+.box-input-valor-tabla {
+    margin-left: 1%;
+    width: 50%;
+}
+
+.input-date-valor-tabla {
+    margin-left: 1%;
+    width: 1%;
+}

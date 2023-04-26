@@ -11,7 +11,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models
 
         public string Descripcion_Articulo { get; set; }
 
-        public float Precio_Articulo { get; set; }
+        public double Precio_Articulo { get; set; }
 
         public int Codigo_Cliente { get; set; }
 

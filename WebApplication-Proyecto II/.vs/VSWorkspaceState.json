@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
     "\\Views",
     "\\Views\\Administrador",
     "\\Views\\Shared",
@@ -9,6 +8,6 @@
     "\\wwwroot\\css",
     "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\WebApplication-Proyecto II- Morera Vargas Isaac.sln",
   "PreviewInSolutionExplorer": false
 }

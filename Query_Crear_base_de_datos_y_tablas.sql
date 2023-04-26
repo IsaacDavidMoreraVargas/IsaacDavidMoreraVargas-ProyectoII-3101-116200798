@@ -33,7 +33,6 @@ Create table retirados(
          Nombre_Libro varchar(30) NOT NULL,
          Descripcion_Articulo varchar(30) NOT NULL,
          Codigo_Cliente int NOT NULL,
-         Nombre_Empresa varchar(30) NOT NULL,
          Fecha_Retiro varchar(20) NOT NULL,
 		 PRIMARY KEY (Llave_retiro)
 );
