@@ -50,3 +50,17 @@ function regreso_a_estado_inicio_reporte()
 {
     esconder_tablas_primera_vez()
 }
+
+function abrir_reporte_SSRS(bandera)
+{
+
+    switch (bandera) {
+        case 0:
+            window.open("http://desktop-rvllmub/ReportServer/Pages/ReportViewer.aspx?%2fpRUEBA%2fReportTodosRetiros&rs:Command=Render", "_blank");
+            break;
+
+        case 1:
+            window.open("http://desktop-rvllmub/ReportServer/Pages/ReportViewer.aspx?%2fpRUEBA%2fReportRetirosFecha&rs:Command=Render", "_blank");
+            break;
+    }
+}
