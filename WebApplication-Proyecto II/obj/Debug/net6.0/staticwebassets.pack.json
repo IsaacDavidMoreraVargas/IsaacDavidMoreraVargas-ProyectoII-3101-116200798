@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\css\\layout.css"
     },
     {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\listas.css",
+      "PackagePath": "staticwebassets\\css\\listas.css"
+    },
+    {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\tabla.css",
       "PackagePath": "staticwebassets\\css\\tabla.css"
     },
@@ -43,6 +47,10 @@
     {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\obtener_online.js",
       "PackagePath": "staticwebassets\\js\\obtener_online.js"
+    },
+    {
+      "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\tabla.js",
+      "PackagePath": "staticwebassets\\js\\tabla.js"
     },
     {
       "Id": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\ventana_alerta.js",

@@ -28,4 +28,5 @@ app.MapControllerRoute(
     //pattern: "{controller=Administrador}/{action=AgregarCliente}/{id?}");
     //pattern: "{controller=Administrador}/{action=AgregarIngreso}/{id?}");
     //pattern: "{controller=Administrador}/{action=AgregarRetiro}/{id?}");
+    //pattern: "{controller=Administrador}/{action=ConsultaReporte}/{id?}");
 app.Run();

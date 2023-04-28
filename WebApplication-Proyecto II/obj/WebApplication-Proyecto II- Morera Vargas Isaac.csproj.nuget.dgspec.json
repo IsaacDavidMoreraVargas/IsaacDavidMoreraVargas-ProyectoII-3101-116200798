@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.1.3, )"
             }
           },
           "imports": [

@@ -103,3 +103,4 @@ C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrume
 C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout_interno_dos.cshtml.rz.scp.css
 C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II\obj\Debug\net6.0\WebApplication-Proyecto II- Morera Vargas Isaac.csproj.CopyComplete
+C:\Users\Isaac\Mi unidad\SYNC\UNED\03101 - PROGRAMACION AVANZADA EN WEB\Instrumentos\proyectoii\WebApplication-Proyecto II\bin\Debug\net6.0\NLog.dll

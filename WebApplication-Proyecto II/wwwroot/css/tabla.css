@@ -152,3 +152,93 @@ button
     margin-left: 1%;
     width: 1%;
 }
+
+.tabla-reporte {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 96%;
+    height: 80%;
+    border-radius: 5px;
+    border: 1px solid black;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.leyenda-tabla-reporte {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 98%;
+    height: 5%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.contenedor-cabeza-tabla-reporte, .contenedor-fila-tabla-reporte {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 98%;
+    height: 5%;
+    color: white;
+}
+.contenedor-cabeza-tabla-reporte {
+    background-color: #70D6AE;
+}
+    
+.contenedor-fila-tabla-reporte {
+    color: black;
+}
+
+.color-fila-tabla {
+    background-color: #97D7C8;
+}
+
+.contenedor-fila-tabla-dividido {
+    margin-top: 0%;
+    margin-left: 0%;
+    border-top: 1px solid black;
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+.cabeza-reporte, .fila-reporte, .cabeza-reporte-dos, .fila-reporte-dos {
+    margin-top: 0%;
+    margin-left: 0%;
+    border-right: 1px solid white;
+    width: 24.9%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+.cabeza-reporte-dos, .fila-reporte-dos, .fila-tabla-uno {
+    width: 19.9%;
+}
+
+.fila-reporte-dos {
+    width: 24.9%;
+}
+
+.nombre-reporte {
+    width: 100%;
+}
+.espacio-un-porciento {
+    margin-top: 7%;
+}
+
+.regresar-reporte {
+    margin-top: 1%;
+    margin-left: 37%;
+    width: 25%;
+    height: 3%;
+    text-align: center;
+    background-color: #7BCBFA;
+    color: white;
+    border-radius: 5px;
+}
+
+.regresar-reporte:hover {
+    border: 1px solid black;
+}
+

@@ -26,6 +26,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         }
         public IActionResult AgregarLibro()
         {
+            //TempData["Nombre_Empresa"] = "Libreria la Internacional";
             try
             {
                 var resultados = context_libro.Registros_Libro.ToList();
@@ -133,6 +134,25 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         }
         public IActionResult AgregarRetiro()
         {
+            return View();
+        }
+        public IActionResult ConsultaReporte()
+        {
+            try 
+            {   
+                var clientes= context_cliente.Registros_Cliente.ToList();
+                if(clientes!=null)
+                {
+                    ViewBag.ListaClientes = clientes;
+                }
+
+                var stock = context_ingreso.Registros_Ingreso.ToList();
+                if (stock != null)
+                {
+                    ViewBag.ListaStock = stock;
+                }
+                }
+            catch (Exception e) { Console.WriteLine("Error en ConsultaReporte: "+ e); }
             return View();
         }
         //Funciones Consulta online

@@ -324,3 +324,9 @@ form {
         margin-left: 5%;
         color: #7EC0FF;
     }
+
+.nombre-empresa {
+    margin-left: 20%;
+    color: white;
+    float: left;
+}

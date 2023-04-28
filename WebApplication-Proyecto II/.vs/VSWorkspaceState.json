@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
+    "\\Models",
+    "\\obj",
     "\\Views",
     "\\Views\\Administrador",
     "\\Views\\Shared",

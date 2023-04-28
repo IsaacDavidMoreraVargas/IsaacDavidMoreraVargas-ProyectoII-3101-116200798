@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QINTjIBNyNSX/3BXClSK4ez23+epCLhxjgsyfFnnMsI=",
+  "Hash": "Cm4XnqsepG9LECxlWXRgJb59A6iBsfWbSYAcyGwTm5A=",
   "Source": "WebApplication-Proyecto II- Morera Vargas Isaac",
   "BasePath": "_content/WebApplication-Proyecto II- Morera Vargas Isaac",
   "Mode": "Default",
@@ -119,6 +119,23 @@
       "OriginalItemSpec": "wwwroot\\css\\layout.css"
     },
     {
+      "Identity": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\listas.css",
+      "SourceId": "WebApplication-Proyecto II- Morera Vargas Isaac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\",
+      "BasePath": "_content/WebApplication-Proyecto II- Morera Vargas Isaac",
+      "RelativePath": "css/listas.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\listas.css"
+    },
+    {
       "Identity": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\css\\tabla.css",
       "SourceId": "WebApplication-Proyecto II- Morera Vargas Isaac",
       "SourceType": "Discovered",
@@ -219,6 +236,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\obtener_online.js"
+    },
+    {
+      "Identity": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\tabla.js",
+      "SourceId": "WebApplication-Proyecto II- Morera Vargas Isaac",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\",
+      "BasePath": "_content/WebApplication-Proyecto II- Morera Vargas Isaac",
+      "RelativePath": "js/tabla.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\tabla.js"
     },
     {
       "Identity": "C:\\Users\\Isaac\\Mi unidad\\SYNC\\UNED\\03101 - PROGRAMACION AVANZADA EN WEB\\Instrumentos\\proyectoii\\WebApplication-Proyecto II\\wwwroot\\js\\ventana_alerta.js",

@@ -1,0 +1,126 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout_interno_dos";
+}
+
+<div class="contenedor-columna">
+    <div class="opciones-reporte">
+        <div class="opciones-opciones" onclick="actualizar_tabla_en_uso(0)">Lista todos los clientes</div>
+        <div class="opciones-opciones" onclick="actualizar_tabla_en_uso(1)">Lista libros en stock por cliente</div>
+    </div>
+    <div class="opciones-reporte">
+        <div class="opciones-opciones" onclick="actualizar_tabla_en_uso(2)">Reporting Service(SSRS) solicitud de retiro artículos en stock</div>
+        <div class="opciones-opciones" onclick="actualizar_tabla_en_uso(3)">Reporting Service(SSRS) todos los retiros en un periodo</div>
+    </div>
+</div>
+
+<div class="tabla-reporte">
+    <div class="leyenda-tabla-reporte">Liberia la Internacional - Listado de clientes por cada cliente</div>
+    <div class="contenedor-cabeza-tabla-reporte">
+        <div class="cabeza-reporte">Codigo Cliente</div>
+        <div class="cabeza-reporte">Nombre Cliente</div>
+        <div class="cabeza-reporte">Numero Identificacion</div>
+        <div class="cabeza-reporte">Fecha Nacimiento</div>
+    </div>
+
+    @{
+        int numero = 0;
+        if (ViewBag.ListaClientes != null)
+        {
+            foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_cliente cliente in ViewBag.ListaClientes)
+            {
+                if ((numero % 2) == 0)
+                {
+                    <div class="contenedor-fila-tabla-reporte">
+                        <div class="fila-reporte color-fila-tabla">@cliente.Codigo_Cliente</div>
+                        <div class="fila-reporte color-fila-tabla">@cliente.Nombre_Cliente</div>
+                        <div class="fila-reporte color-fila-tabla">@cliente.Numero_Identificacion</div>
+                        <div class="fila-reporte color-fila-tabla">@cliente.Fecha_Nacimiento</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="contenedor-fila-tabla-reporte">
+                        <div class="fila-reporte">@cliente.Codigo_Cliente</div>
+                        <div class="fila-reporte">@cliente.Nombre_Cliente</div>
+                        <div class="fila-reporte">@cliente.Numero_Identificacion</div>
+                        <div class="fila-reporte">@cliente.Fecha_Nacimiento</div>
+                    </div>
+                }
+                numero++;
+            }
+        }
+     }
+</div>
+
+
+<div class="tabla-reporte">
+    <div class="leyenda-tabla-reporte">Liberia la Internacional - Listado de clientes por nombre</div>
+    <div class="contenedor-cabeza-tabla-reporte">
+        <div class="cabeza-reporte-dos">Nombre Cliente</div>
+        <div class="cabeza-reporte-dos">Codigo_Libro</div>
+        <div class="cabeza-reporte-dos">Descripcion Articulo</div>
+        <div class="cabeza-reporte-dos">Precio Articulo</div>
+        <div class="cabeza-reporte-dos">Fecha_Ingreso</div>
+    </div>
+
+    @{
+        if (ViewBag.ListaClientes != null)
+        {
+            int numero_inicio = 0;
+            foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_cliente cliente in ViewBag.ListaClientes)
+            {
+                string clase_aplicar = "";
+                if (numero_inicio == 0)
+                {
+                    clase_aplicar = "contenedor-fila-tabla-reporte";
+                }
+                else
+                {
+                    clase_aplicar = "contenedor-fila-tabla-reporte espacio-un-porciento";
+                }
+                numero_inicio++;
+
+                <div class="@clase_aplicar">
+                    <div class="contenedor-fila-tabla-dividido fila-tabla-uno color-fila-tabla">
+                        <div class="fila-reporte-dos nombre-reporte color-fila-tabla">@cliente.Nombre_Cliente</div>
+                    </div>
+                    <div class="contenedor-fila-tabla-dividido">
+                        @{
+                            int numero2 = 0;
+                            foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_stock stock in ViewBag.ListaStock)
+                            {
+                                if (cliente.Codigo_Cliente == stock.Codigo_Cliente)
+                                {
+                                    if ((numero2 % 2) == 0)
+                                    {
+                                        <div class="fila-reporte-dos color-fila-tabla">@stock.Codigo_Libro</div>
+                                        <div class="fila-reporte-dos color-fila-tabla">@stock.Descripcion_Articulo</div>
+                                        double x = Math.Truncate(@stock.Precio_Articulo * 100) / 100;
+                                        <div class="fila-reporte-dos color-fila-tabla">@x</div>
+                                        <div class="fila-reporte-dos color-fila-tabla">@stock.Fecha_Ingreso</div>
+                                    }else
+                                    {
+                                        <div class="fila-reporte-dos">@stock.Codigo_Libro</div>
+                                        <div class="fila-reporte-dos">@stock.Descripcion_Articulo</div>
+                                        double x = Math.Truncate(@stock.Precio_Articulo * 100) / 100;
+                                        <div class="fila-reporte-dos">@x</div>
+                                        <div class="fila-reporte-dos">@stock.Fecha_Ingreso</div>
+                                    }
+                                    numero2++;
+                                }   
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                
+            }
+        }
+    }
+</div>
+
+<div class="regresar-reporte" onclick="regreso_a_estado_inicio_reporte()">Regresar</div>

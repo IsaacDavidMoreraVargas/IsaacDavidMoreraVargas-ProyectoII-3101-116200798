@@ -9,15 +9,17 @@
     <link rel="stylesheet" type="text/css" href="~/css/ventana_alerta.css" />
     <link rel="stylesheet" type="text/css" href="~/css/layout.css" />
     <link rel="stylesheet" type="text/css" href="~/css/tabla.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/listas.css" />
     <script type="text/javascript" src="~/js/ventana_alerta.js"></script>
     <script type="text/javascript" src="~/js/obtener_online.js"></script>
     <script type="text/javascript" src="~/js/general.js"></script>
+    <script type="text/javascript" src="~/js/tabla.js"></script>
     @RenderSection("css", false)
 </head>
-<body onload="primera_vez()">
+<body onload="primera_vez(); esconder_tablas_primera_vez()">
     <header>
         <div class="body-layout color-menu">
-            <a class="regresar" href="/">Regresar</a>
+            <a class="regresar" href="/">Regresar</a><div class="nombre-empresa">@TempData["Nombre_Empresa"]</div>
         </div>
     </header>
     <div class="container">
