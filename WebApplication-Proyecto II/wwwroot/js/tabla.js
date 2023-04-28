@@ -24,7 +24,14 @@ function esconder_tablas_reporte()
         }
     }
 
-    document.getElementsByClassName("regresar-reporte")[0].style.display = "none";
+    try {
+
+        let array = document.getElementsByClassName("regresar-reporte");
+        if (array != null) {
+            array[0].style.display = "none";
+        }
+    } catch { }
+    
 }
 
 function actualizar_tabla_en_uso(numero) {
@@ -56,7 +63,7 @@ function abrir_reporte_SSRS(bandera)
 
     switch (bandera) {
         case 0:
-            window.open("http://desktop-rvllmub/ReportServer/Pages/ReportViewer.aspx?%2fpRUEBA%2fReportTodosRetiros&rs:Command=Render", "_blank");
+            window.open("http://localhost/ReportServer/Pages/ReportViewer.aspx?%2FpRUEBA%2FReportTodosSobreRetiro&rs%3AClearSession=true&rc%3AView=fe131dcb-d0d7-404d-83a7-b630f958a28e", "_blank");
             break;
 
         case 1:

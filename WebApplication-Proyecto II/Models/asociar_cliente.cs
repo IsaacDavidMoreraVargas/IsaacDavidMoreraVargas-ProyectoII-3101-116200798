@@ -12,5 +12,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models
         public int Numero_Identificacion { get; set; }
 
         public string Fecha_Nacimiento { get; set; }
+
+        public string Correo_Electronico { get; set; }
     }
 }

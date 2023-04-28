@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.5.33530.505</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2023-04-28T05:04:49.8593067Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2023-04-28T20:39:18.4881724Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -34,7 +34,8 @@
             <rd:UserDefined>true</rd:UserDefined>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>Select * From retirados</CommandText>
+        <CommandText>SELECT Llave_retiro, Codigo_Libro, Nombre_Libro, Descripcion_Articulo, Codigo_Cliente, Fecha_Retiro
+FROM  retirados</CommandText>
       </Query>
       <Fields>
         <Field Name="Llave_retiro">
@@ -514,11 +515,11 @@
   <ReportParameters>
     <ReportParameter Name="Fecha_Entrada">
       <DataType>DateTime</DataType>
-      <Prompt>Fecha_Retiro</Prompt>
+      <Prompt>Fecha Entrada</Prompt>
     </ReportParameter>
     <ReportParameter Name="Fecha_Salida">
       <DataType>DateTime</DataType>
-      <Prompt>Fecha_Retiro</Prompt>
+      <Prompt>Fecha Salida</Prompt>
     </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>

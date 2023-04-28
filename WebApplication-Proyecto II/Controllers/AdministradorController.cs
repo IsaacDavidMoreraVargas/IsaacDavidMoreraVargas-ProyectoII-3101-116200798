@@ -1,11 +1,20 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mail;
+using System.Net;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
 {
     public class AdministradorController : Controller
     {
+        string correo_quien_envia = "";
+        string contrasena_correo_enviador = "";
+        string host_enviador = "";
+        int puerto_enviador = 587;
+        string operacion_correcta = "<div class=?ventana-alertas ventana-color_correcto?>";
+        string operacion_incorrecta = "<div class=?ventana-alertas ventana-color_incorrecto?>";
+        string operacion_cierre = "</div>";
 
         [BindProperty]
         public WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro Registro_Libro { get; set; }
@@ -60,10 +69,11 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 {
                     context_libro.Registros_Libro.Add(Registro_Libro);
                     context_libro.SaveChanges();
+                    correcto_incorrecto(0,"");
                 }
                 
             }
-            catch (Exception e) { Console.WriteLine("RegistrarLibro Error: "+ e); }
+            catch (Exception e) { Console.WriteLine("RegistrarLibro Error: "+ e); correcto_incorrecto(1,""); }
 
             return RedirectToAction("AgregarLibro", "Administrador");
         }
@@ -83,13 +93,13 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 }
                 if (numero > 99999)
                 {
-
+                    correcto_incorrecto(3,"Error: cantidad  registro maximo alcanzado");
                 }
                 else
                 {
                     TempData["Codigo_Cliente"] = numero;
                 }
-            }catch (Exception e) { Console.WriteLine("Error Obtener datos de cliente: " + e); }
+            }catch (Exception e) { Console.WriteLine("Error Obtener datos de cliente: " + e); correcto_incorrecto(1, ""); }
             return View();
         }
         public IActionResult RegistrarCliente()
@@ -100,8 +110,13 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 {
                     context_cliente.Registros_Cliente.Add(Registro_Cliente);
                     context_cliente.SaveChanges();
+                    correcto_incorrecto(0, "");
                 }
                 catch (Exception e) { Console.WriteLine("RegistrarCliente Error: " + e); }
+            }
+            else
+            {
+                correcto_incorrecto(3, "Error: cantidad  registro maximo alcanzado");
             }
             return RedirectToAction("AgregarCliente", "Administrador");
         }
@@ -111,25 +126,87 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
         }
         public IActionResult AgregarIngreso()
         {
+            try
+            {
+                var libros = context_libro.Registros_Libro.ToList();
+                if (libros != null)
+                {
+                    ViewBag.ListaCodigos = libros;
+                }
+            }
+            catch (Exception e) { Console.WriteLine("Error obteniendo libros"); correcto_incorrecto(3, "Error obteniendo datos"); }
+
+            try
+            {
+                var clientes = context_cliente.Registros_Cliente.ToList();
+                if (clientes != null)
+                {
+                    ViewBag.ListaCliente = clientes;
+                }
+            }
+            catch (Exception e) { Console.WriteLine("Error obteniendo clientes"); correcto_incorrecto(3, "Error obteniendo datos"); }
+
             TempData["Fecha_Actual"]= DateTime.Now.ToString("yyyy-MM-dd");
             return View();
         }
         public IActionResult RegistrarIngreso()
         {
+            bool correcto = false;
+            int correcto_codigo_cliente = 0;
+            int correcto_codigo_libro = 0;
+            string correo_quien_recibe = "";
+            string subject = "";
+            string message = "";
             try 
             {
                 //Console.WriteLine("->"+ Registro_Ingreso.Precio_Articulo);
+
+                correcto_codigo_cliente = Registro_Ingreso.Codigo_Cliente;
+                correcto_codigo_libro = Registro_Ingreso.Codigo_Libro;
+                message = Registro_Ingreso.Descripcion_Articulo+ "\n Fecha Ingreso: "+ Registro_Ingreso.Fecha_Ingreso;
+
                 Registro_Ingreso.Precio_Articulo= (float)Math.Round(Registro_Ingreso.Precio_Articulo * 100f) / 100f;
                 context_ingreso.Registros_Ingreso.Add(Registro_Ingreso);
                 context_ingreso.SaveChanges();
+                correcto = true;
 
+                correcto_incorrecto(0, "");
                 string ventana_alerta = "<div class=*bloquear-alerta*><div class=*ventana-alertas*>" +
                                             "<div class=*mensaje-ventana-alertas*>¿Quiere agregar mas libros a custodia?</div>" +
                                             "<div class=*boton-ventana-alertas espacio* onclick=*cerrarAlerta()*>Si</div><div class=*boton-ventana-alertas* onclick=*aInicioIndex()*>No</div>" +
                                         "</div></div>";
                 ventana_alerta = ventana_alerta.Replace("*", "'");
                 TempData["Alert-Alert"] = ventana_alerta;
-            }catch (Exception e) { Console.WriteLine("Error Registo Ingreso: "+e); }
+                
+            }
+            catch (Exception e) { Console.WriteLine("Error Registo Ingreso: "+e); correcto_incorrecto(1, ""); }
+
+            if (correcto == true)
+            {
+                try
+                {
+                    var cliente = context_cliente.Registros_Cliente.Find(correcto_codigo_cliente);
+                    if (cliente != null)
+                    {
+                        correo_quien_recibe = cliente.Correo_Electronico;
+
+                        var libro = context_libro.Registros_Libro.Find(correcto_codigo_libro);
+                        if (libro != null)
+                        {
+                            subject = "Libro ingresado a tu nombre: " + libro.Nombre_Libro + ", Cliente: "+cliente.Codigo_Cliente;
+                            message = "Nombre Empresa: " + libro.Nombre_Empresa + "\n" + "Descipcion: " + message;
+                        }
+                    }
+
+                }catch (Exception f) { Console.WriteLine("Error encontrando cliente para correo"); correcto_incorrecto(3, "Error obteniendo datos para enviar correo"); }
+                
+                if (correcto == true)
+                {
+                    Enviar_Email(correo_quien_envia, correo_quien_recibe, subject, message, contrasena_correo_enviador, host_enviador, puerto_enviador);
+                }
+            }
+            
+
             return RedirectToAction("AgregarIngreso", "Administrador");
         }
         public IActionResult AgregarRetiro()
@@ -152,7 +229,7 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                     ViewBag.ListaStock = stock;
                 }
                 }
-            catch (Exception e) { Console.WriteLine("Error en ConsultaReporte: "+ e); }
+            catch (Exception e) { Console.WriteLine("Error en ConsultaReporte: "+ e); correcto_incorrecto(3, "Error obteniendo datos"); }
             return View();
         }
         //Funciones Consulta online
@@ -343,6 +420,67 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 }
             }catch (Exception e) { }
             return (string_retorno);
+        }
+
+        [HttpPost]
+        public void Enviar_Email(string correo_quien_envia, string correo_quien_recibe, string subject, string message, string contrasena, string a_host, int puerto)
+        {
+            try
+            {
+                var senderEmail = new MailAddress(correo_quien_envia, "NAME");
+                var receiverEmail = new MailAddress(correo_quien_recibe, "NAME");
+                var password = contrasena;
+                var sub = subject;
+                var body = message;
+                var smtp = new SmtpClient
+                {
+                    //Host = "smtp.gmail.com",
+                    Host = a_host,
+                    //Port = 587,
+                    Port = puerto,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(senderEmail.Address, password)
+                };
+                using (var mess = new MailMessage(senderEmail, receiverEmail)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+                {
+                    smtp.Send(mess);
+                }
+
+                correcto_incorrecto(2, "Email enviado exitosamente");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error enviando email, Razon: " + e); correcto_incorrecto(3, "Error enviando email");
+            }
+        }
+    
+        public void correcto_incorrecto(int numero, string mensaje)
+        {
+            string crear_alert = "";
+            switch (numero)
+            {
+                case 0:
+                    crear_alert = operacion_correcta + "Operacion Exitosa" + operacion_cierre;
+                    break;
+                case 1:
+                    crear_alert = operacion_incorrecta + "Operacion No Exitosa" + operacion_cierre;
+                    break;
+
+                case 2:
+                    crear_alert = operacion_correcta + mensaje + operacion_cierre;
+                    break;
+                case 3:
+                    crear_alert = operacion_incorrecta + mensaje + operacion_cierre;
+                    break;
+            }
+            crear_alert = crear_alert.Replace('?', '"');
+            TempData["Alert-Alert"] = crear_alert;
         }
     }
 }

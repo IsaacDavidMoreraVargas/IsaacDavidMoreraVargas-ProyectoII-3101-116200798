@@ -8,10 +8,7 @@
     Layout = "_Layout_interno";
 }
 @model WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro;
-@{
 
-    @Html.Raw(@TempData["Alert-Alert"]);
-}
 <div class="contenedor-columna">
     <form method="post" enctype="multipart/form-data" asp-controller="Administrador" asp-action="RegistrarLibro" asp-route-orden="@TempData["Codigo_Orden"]">
         <div class="contenedor-fila border-padre">

@@ -12,20 +12,24 @@
             <div class="contenedor-titulo color-titulo-padre">Datos Registro Cliente</div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Codigo Cliente</label>
-                <input readonly runat="server" asp-for="Codigo_Cliente" class="input-valor border-hijo" id="" value="@TempData["Codigo_Cliente"]" type="number" onkeyup="" required />
+                <input readonly runat="server" asp-for="Codigo_Cliente" class="input-valor border-hijo" id="" value="@TempData["Codigo_Cliente"]" type="number" onkeyup="evaluar_vacios()" required />
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Numero Identificacion</label>
-                <input runat="server" asp-for="Numero_Identificacion" class="input-valor border-hijo" id="" value="" type="number" onkeyup="" required />
+                <input runat="server" asp-for="Numero_Identificacion" class="input-valor border-hijo" id="" value="" type="number" onkeyup="recortar(this,9); evaluar_vacios()" required />
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Nombre Cliente</label>
-                <input runat="server" asp-for="Nombre_Cliente" class="input-valor border-hijo" id="" value="" type="text" onkeyup="check_Empty()" maxlength="30" required />
+                <input runat="server" asp-for="Nombre_Cliente" class="input-valor border-hijo" id="" value="" type="text" onkeyup="evaluar_vacios()" maxlength="30" required />
             </div>
             <div class="contenedor-datos">
                 <label class="titulo-valor color-padre">Fecha Nacimiento</label>
                 <input runat="server" asp-for="Fecha_Nacimiento" class="box-input-valor border-hijo" readonly id="" value="" type="text" onchange="evaluar_vacios()" maxlength="30" required />
                 <input class="input-date-valor" id="" value="" type="date" onchange="actualizar_fecha(0,'box-input-valor','input-date-valor',false)" required />
+            </div>
+            <div class="contenedor-datos">
+                <label class="titulo-valor color-padre">Correo Electronico</label>
+                <input runat="server" asp-for="Correo_Electronico" class="input-valor border-hijo" id="" value="" type="text" onkeyup="evaluar_vacios()" maxlength="100" required />
             </div>
         </div>
 

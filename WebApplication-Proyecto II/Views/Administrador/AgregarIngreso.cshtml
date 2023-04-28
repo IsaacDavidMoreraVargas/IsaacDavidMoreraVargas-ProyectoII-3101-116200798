@@ -4,20 +4,39 @@
 @{
     Layout = "_Layout_interno_dos";
 }
-@{
-
-    @Html.Raw(@TempData["Alert-Alert"]);
-}
 @model WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_stock;
 <div class="contenedor-columna primero">
     <div class="contenedor-datos">
         <label class="titulo-valor color-padre">Consulta Codigo Libro</label>
-        <input class="input-valor border-hijo" id="" value="" type="number" onkeyup="consultaOnline(0 ,this)" required />
-    </div>
+        <select runat="server" class="input-valor border-hijo" id="" value="" onchange="consultaOnline(0 ,this); evaluar_vacios()">
+            <option lass="input-valor border-hijo" value="---">---</option>
+            @{
+                if (ViewBag.ListaCodigos != null)
+                {
+                    foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_libro libros in ViewBag.ListaCodigos)
+                    {
+                        <option lass="input-valor border-hijo" value=@libros.Codigo_Libro>@libros.Codigo_Libro - @libros.Nombre_Libro</option>
+                    }
+                }
+            }
 
+        </select>
+    </div>
     <div class="contenedor-datos">
         <label class="titulo-valor color-padre">Consulta Codigo Cliente</label>
-        <input class="input-valor border-hijo" id="" value="" type="number" onkeyup="consultaOnline(1 ,this)" required />
+        <select runat="server" class="input-valor border-hijo" id="" value="" onchange="consultaOnline(1 ,this); evaluar_vacios()">
+            <option lass="input-valor border-hijo" value="---">---</option>
+            @{
+                if (ViewBag.ListaCliente != null)
+                {
+                    foreach (WebApplication_Proyecto_II__Morera_Vargas_Isaac.Models.asociar_cliente clientes in ViewBag.ListaCliente)
+                    {
+                        <option lass="input-valor border-hijo" value=@clientes.Codigo_Cliente>@clientes.Codigo_Cliente - @clientes.Nombre_Cliente</option>
+                    }
+                }
+            }
+            
+        </select>
     </div>
 </div>
 

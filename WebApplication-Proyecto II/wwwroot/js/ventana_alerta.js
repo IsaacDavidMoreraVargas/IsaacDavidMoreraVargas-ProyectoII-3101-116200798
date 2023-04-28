@@ -3,5 +3,5 @@
 }
 
 function aInicioIndex() {
-    window.open("/Home/Index", "_self");
+    window.open("/", "_self");
 }

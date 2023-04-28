@@ -1,48 +1,52 @@
 ﻿function consultaOnline(bandera ,element)
 {
-    switch (bandera) {
+    //alert(element.value);
 
-        case 0:
-            var url = "/Administrador/ConsultaInmediataCodigoLibro/" + "?id=" + element.value;
-            var request = new XMLHttpRequest();
-            request.responseType = 'text';
+    if (element.value != "---") {
 
-            request.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    if (this.responseText != "null") {
-                        let convertido = JSON.parse(this.responseText);
-                        document.getElementsByTagName("input")[2].value = convertido.Codigo_Libro;
-                        evaluar_vacios()
+        switch (bandera) {
+
+            case 0:
+                var url = "/Administrador/ConsultaInmediataCodigoLibro/" + "?id=" + element.value;
+                var request = new XMLHttpRequest();
+                request.responseType = 'text';
+
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText != "null") {
+                            let convertido = JSON.parse(this.responseText);
+                            document.getElementsByTagName("input")[0].value = convertido.Codigo_Libro;
+                            evaluar_vacios()
+                        }
                     }
-                }
-            };
+                };
 
-            request.open('GET', url, true);
-            request.send();
-            break;
+                request.open('GET', url, true);
+                request.send();
+                break;
 
-        case 1:
-            var url = "/Administrador/ConsultaInmediataCodigoCliente/" + "?id=" + element.value;
-            var request = new XMLHttpRequest();
-            request.responseType = 'text';
+            case 1:
+                var url = "/Administrador/ConsultaInmediataCodigoCliente/" + "?id=" + element.value;
+                var request = new XMLHttpRequest();
+                request.responseType = 'text';
 
-            request.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    if (this.responseText != "null") {
-                        let convertido = JSON.parse(this.responseText);
-                        document.getElementsByTagName("input")[5].value = convertido.Codigo_Cliente;
-                        evaluar_vacios()
+                request.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (this.responseText != "null") {
+                            let convertido = JSON.parse(this.responseText);
+                            document.getElementsByTagName("input")[3].value = convertido.Codigo_Cliente;
+                            evaluar_vacios()
+                        }
                     }
-                }
-            };
+                };
 
-            request.open('GET', url, true);
-            request.send();
-            break;
+                request.open('GET', url, true);
+                request.send();
+                break;
 
-        case 2:
+            case 2:
 
-            
+
                 //console.log("here");
                 var url = "/Administrador/ConsultaStockDeClienteDisponible/" + "?id=" + element.value;
                 var request = new XMLHttpRequest();
@@ -68,7 +72,7 @@
                                 acumulador += "</div>";
                                 acumulador += "<div class=*contenedor-datos-tabla*><label class=*titulo-valor-tabla color-padre*>Fecha Retiro</label><input class=*box-input-valor-tabla border-hijo* readonly type=*text* maxlength=*30* required /><input class=*input-date-valor-tabla* type=*date* onchange=*actualizar_fecha(" + numero + ",'box-input-valor-tabla','input-date-valor-tabla',false)* required /></div>";
                                 acumulador += "</div>";
-                                
+
                                 //sava = sava.replaceAll('*', '"');
                                 //console.log(sava);
                                 final_acumulador += acumulador.replaceAll('*', '"');
@@ -92,10 +96,11 @@
                 request.open('GET', url, true);
                 request.send();
 
-                
-            
-            break;
+                break;
+        }
+
     }
+    
 }
 function consultaNO(element)
 {

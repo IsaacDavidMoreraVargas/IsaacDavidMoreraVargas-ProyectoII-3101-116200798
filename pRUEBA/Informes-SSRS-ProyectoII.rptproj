@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Report Include="ReportRetirosFecha.rdl" />
-    <Report Include="ReportTodosRetiros.rdl" />
+    <Report Include="ReportTodosSobreRetiro.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>

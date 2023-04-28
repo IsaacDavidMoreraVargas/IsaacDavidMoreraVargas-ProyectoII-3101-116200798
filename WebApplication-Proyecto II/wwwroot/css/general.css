@@ -330,3 +330,22 @@ form {
     color: white;
     float: left;
 }
+
+.ventana-alertas {
+    margin-left: 30%;
+    width: 20%;
+    height: 20%;
+    position: fixed;
+    z-index: 5;
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.ventana-color_correcto {
+    background-color: lightseagreen;
+}
+
+.ventana-color_incorrecto {
+    background-color: lightcoral;
+}

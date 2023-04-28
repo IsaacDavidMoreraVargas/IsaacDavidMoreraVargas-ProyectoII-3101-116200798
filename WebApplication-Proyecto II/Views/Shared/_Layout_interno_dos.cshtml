@@ -17,6 +17,10 @@
     @RenderSection("css", false)
 </head>
 <body onload="primera_vez(); esconder_tablas_primera_vez()">
+    @{
+
+        @Html.Raw(@TempData["Alert-Alert"]);
+    }
     <header>
         <div class="body-layout color-menu">
             <a class="regresar" href="/">Regresar</a><div class="nombre-empresa">@TempData["Nombre_Empresa"]</div>

@@ -6,6 +6,7 @@ var color_boton_correcto = "#8fc2ec";
 
 function primera_vez() {
     evaluar_vacios()
+    Cerrar_Lento();
 }
 
 function actualizar_fecha(numero, input_meta, input_origen, validar) {
@@ -71,3 +72,39 @@ function evaluar_float(elemento)
     }
     //console.log("here");
 }
+
+function recortar(elemento, numero_maximo) {
+    let valor_momentaneo = elemento.value;
+    valor_momentaneo = valor_momentaneo.toString();
+    if (valor_momentaneo.length > numero_maximo) {
+        //alert(valor_momentaneo.length + "-" + (numero_maximo));
+        let salvar = "";
+        for (let bandera = 0; bandera < numero_maximo; bandera++) {
+            salvar += valor_momentaneo[bandera];
+        }
+        elemento.value = Number(salvar);
+    }
+
+}
+
+function Cerrar_Lento() {
+
+    let ventanaalerta = document.getElementsByClassName("ventana-alertas");
+    if (ventanaalerta != null) {
+
+        for (let bandera = 0; bandera < ventanaalerta.length; bandera++)
+        {
+            ventanaalerta[bandera].style.opacity = "1";
+            for (let i = 10; i >= 0; i--) {
+                setTimeout(function () {
+                    ventanaalerta[bandera].style.opacity = "'0." + i + "'";
+                    if (i == 0) {
+                        ventanaalerta[bandera].remove();
+                    }
+                }, (10 - i) * 100);
+            }
+        }
+        
+    }
+}
+

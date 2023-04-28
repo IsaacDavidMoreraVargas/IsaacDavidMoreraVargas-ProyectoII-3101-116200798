@@ -14,6 +14,7 @@ Create table cliente(
 		Numero_Identificacion int NOT NULL,
         Nombre_Cliente varchar(30) NOT NULL,
         Fecha_Nacimiento varchar(20) NOT NULL,
+		Correo_Electronico varchar(100) NOT NULL,
 		PRIMARY KEY (Codigo_Cliente)
 );
 
