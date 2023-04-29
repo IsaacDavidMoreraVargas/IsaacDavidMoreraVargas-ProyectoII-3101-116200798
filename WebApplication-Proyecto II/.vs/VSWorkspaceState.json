@@ -3,13 +3,11 @@
     "",
     "\\Controllers",
     "\\obj",
+    "\\Views",
     "\\Views\\Administrador",
     "\\Views\\Home",
-    "\\Views\\Shared",
-    "\\Views\\SSRS",
-    "\\wwwroot\\css",
-    "\\wwwroot\\js"
+    "\\Views\\Shared"
   ],
-  "SelectedNode": "\\Controllers\\AdministradorController.cs",
+  "SelectedNode": "\\WebApplication-Proyecto II- Morera Vargas Isaac.sln",
   "PreviewInSolutionExplorer": false
 }
