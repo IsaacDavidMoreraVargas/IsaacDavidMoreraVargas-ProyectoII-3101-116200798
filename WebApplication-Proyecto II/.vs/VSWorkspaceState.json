@@ -1,16 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
     "\\obj",
-    "\\Views",
     "\\Views\\Administrador",
     "\\Views\\Home",
     "\\Views\\Shared",
     "\\Views\\SSRS",
-    "\\wwwroot",
     "\\wwwroot\\css",
     "\\wwwroot\\js"
   ],
-  "SelectedNode": "\\WebApplication-Proyecto II- Morera Vargas Isaac.sln",
+  "SelectedNode": "\\Controllers\\AdministradorController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -69,7 +69,11 @@ namespace WebApplication_Proyecto_II__Morera_Vargas_Isaac.Controllers
                 {
                     context_libro.Registros_Libro.Add(Registro_Libro);
                     context_libro.SaveChanges();
-                    correcto_incorrecto(0,"");
+                    correcto_incorrecto(0, "");
+                }
+                else
+                {
+                    correcto_incorrecto(3, "Numero maximo de registros alcanzados");
                 }
                 
             }
